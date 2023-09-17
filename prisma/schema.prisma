@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model User {
+//   id        String   @id @default(uuid())
+//   email     String   @unique
+//   name      String?
+//   emailVerified Boolean @default(false)
+//   image     String?
+//   accounts  Account[]
+//   sessions  Session[]
+//   stripe
+// }
+
+model Todo {
+    id        String   @id @default(cuid())
+    title     String
+    completed Boolean  @default(false)
+}
+
